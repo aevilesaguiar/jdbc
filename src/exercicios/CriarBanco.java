@@ -8,17 +8,12 @@ import java.sql.Statement;
 public class CriarBanco {
     public static void main(String[] args) throws SQLException {
 
-        //conexão com o banco de dados jdbc
+        //criando conexão com o banco de daos
+        Connection connection = FabricaConexao.getConection();
 
-        final String url = "jdbc:mysql://localhost:3306/?verifyServerCertificate=false&useSSL=true";
-        final String usuario = "root";
-        final String senha = "Ussagui0637985";
-
-        //se  passar por esse método quer dizer que a conexão foi efetuado
-        //caso contrario ele dá uma exceção
-        Connection connection= DriverManager.getConnection(url, usuario,senha);
-
+        //criando um objeto que irá conter os comandos sql
         Statement stmt = connection.createStatement();
+        //criando o banco de dados
         stmt.execute("CREATE DATABASE IF NOT EXISTS curso_java");
 
         System.out.println("Banco criado com sucesso");
