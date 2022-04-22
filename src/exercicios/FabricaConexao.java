@@ -15,26 +15,28 @@ public class FabricaConexao {
     public static Connection getConection(){
 
         try {
-            Properties properties = getProperties();
+           // Properties properties = getProperties();
             //informações para conexão com o BD
-            final String url = properties.getProperty("banco.url");
-            final String usuario = properties.getProperty("banco.usuario");
-            final String senha = properties.getProperty("banco.senha");
+            final String url = "jdbc:mysql://localhost:3306/curso_java?verifyServerCertificate=false&useSSL=true";
+            final String usuario = "root";
+            final String senha = "root";
 
+         //   final String url = properties.getProperty("banco.url");
+         //   final String usuario = properties.getProperty("banco.usuario");
+           // final String senha = properties.getProperty("banco.senha");
             //se  passar por esse método quer dizer que a conexão foi efetuado
             //caso contrario ele dá uma exceção
             //CRIANDO CONEXÃO COM O BD
            return  DriverManager.getConnection(url, usuario,senha);
-        }catch (SQLException | IOException e){
+        }catch (SQLException  e){
             throw new RuntimeException(e);
         }
 
     }
 
-    private static Properties getProperties() throws IOException {
+   /* private static Properties getProperties() throws IOException {
         Properties properties=new Properties();
         String path = "/conexao.properties";
        properties.load(FabricaConexao.class.getResourceAsStream(path));
-       return properties;
-    }
+    }*/
 }

@@ -75,3 +75,11 @@ quando se trata de um insert, update ou delete, usamos executeUpdate
 update ou delete, devemos avaliar o valor retornado.
 
 
+## DAO
+
+É muito importante usar no JDBC;
+
+## Prós e contras do JDBC
+
+![img_4.png](img_4.png)
+
