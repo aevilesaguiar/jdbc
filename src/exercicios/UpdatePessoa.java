@@ -46,7 +46,10 @@ public class UpdatePessoa {
            preparedstatment.executeUpdate();
 
             System.out.println("Pessoa alterada com sucesso!");
-        }
+        }else {
+
+            System.out.println("Pessoa não encontrada!");
+            }
 
         scanner.close();
         connection.close();
